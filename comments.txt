@@ -1,0 +1,1 @@
+Type rfc tab to get React component template - functional text component
