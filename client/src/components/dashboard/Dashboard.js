@@ -7,6 +7,7 @@ import Spinner from '../common/Spinner';
 import ProfileActions from './ProfileActions';
 import Experience from './Experience';
 import Education from './Education';
+import { CSSTransitionGroup } from 'react-transition-group'
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -60,16 +61,24 @@ class Dashboard extends Component {
     }
 
     return (
-      <div className="dashboard">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
-              {dashboardContent}
+
+      <CSSTransitionGroup
+        transitionName="transition"
+        transitionAppear={true}
+        transitionAppearTimeout={500}
+        transitionEnter={false}
+        transitionLeave={false}>
+        <div className="dashboard">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <h1 className="display-4">Dashboard</h1>
+                {dashboardContent}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </CSSTransitionGroup>
     );
   }
 }

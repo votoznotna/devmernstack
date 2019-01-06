@@ -37,3 +37,41 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+.transition-appear{
+  opacity: 0;
+}
+ 
+.transition-appear.transition-appear-active{
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
