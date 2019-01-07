@@ -45,7 +45,7 @@ TextFieldGroup.defaultProps = {
   placeholder: '',
   error: '',
   info: '',
-  disabled: false
+  disabled: ''
 };
 
 export default TextFieldGroup;

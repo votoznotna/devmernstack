@@ -299,7 +299,7 @@ CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.instanceOf(Object).isRequired,
-  history: PropTypes.instanceOf(Array).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
   errors: PropTypes.instanceOf(Object).isRequired
 };
 

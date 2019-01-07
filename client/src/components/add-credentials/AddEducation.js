@@ -18,7 +18,7 @@ class AddEducation extends Component {
       current: false,
       description: '',
       errors: {},
-      disabled: false
+      disabled: ''
     };
 
     this.onChange = this.onChange.bind(this);

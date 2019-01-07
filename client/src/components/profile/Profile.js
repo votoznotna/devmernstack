@@ -68,12 +68,10 @@ Profile.propTypes = {
   getProfileByHandle: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      handle: PropTypes.instanceOf(Object).isRequired
+      handle: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.instanceOf(Object).isRequired
-  }).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
   profile: PropTypes.instanceOf(Object).isRequired
 };
 

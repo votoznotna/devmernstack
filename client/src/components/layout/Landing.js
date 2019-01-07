@@ -40,7 +40,7 @@ class Landing extends Component {
 }
 
 Landing.propTypes = {
-  history: PropTypes.instanceOf(Array).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
   auth: PropTypes.instanceOf(Object).isRequired
 };
 

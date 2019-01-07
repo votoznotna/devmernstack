@@ -243,7 +243,7 @@ class CreateProfile extends Component {
 
 CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
-  history: PropTypes.instanceOf(Array).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
   errors: PropTypes.instanceOf(Object).isRequired
 };
 
