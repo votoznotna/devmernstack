@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addEducation } from '../../actions/profileActions';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { addEducation } from '../../actions/profileActions';
 
 class AddEducation extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class AddEducation extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  onCheck(e) {
+  onCheck() {
     this.setState({
       disabled: !this.state.disabled,
       current: !this.state.current
@@ -152,8 +152,12 @@ class AddEducation extends Component {
 
 AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  history: PropTypes.instanceOf(Object),
+  errors: PropTypes.isRequired
+};
+
+AddEducation.defaultProps = {
+  history: null
 };
 
 const mapStateToProps = state => ({
@@ -161,6 +165,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { addEducation })(
-  withRouter(AddEducation)
-);
+export default connect(mapStateToProps, { addEducation })(withRouter(AddEducation));

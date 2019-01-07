@@ -11,7 +11,7 @@ class ProfileAbout extends Component {
 
     // Skill List
     const skills = profile.skills.map((skill, index) => (
-      <div key={index} className="p-3">
+      <div key={index.toString()} className="p-3">
         <i className="fa fa-check" /> {skill}
       </div>
     ));
@@ -43,7 +43,7 @@ class ProfileAbout extends Component {
 }
 
 ProfileAbout.propTypes = {
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.instanceOf(Object).isRequired
 };
 
 export default ProfileAbout;

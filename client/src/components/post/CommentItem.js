@@ -45,9 +45,9 @@ class CommentItem extends Component {
 
 CommentItem.propTypes = {
   deleteComment: PropTypes.func.isRequired,
-  comment: PropTypes.object.isRequired,
+  comment: PropTypes.instanceOf(Object).isRequired,
   postId: PropTypes.string.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.instanceOf(Object).isRequired
 };
 
 const mapStateToProps = state => ({

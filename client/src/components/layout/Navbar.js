@@ -29,7 +29,7 @@ class Navbar extends Component {
         </li>
         <li className="nav-item">
           <a
-            href=""
+            href="#/"
             onClick={this.onLogoutClick.bind(this)}
             className="nav-link"
           >
@@ -95,13 +95,12 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  clearCurrentProfile: PropTypes.func.isRequired,
+  auth: PropTypes.instanceOf(Object).isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
-  Navbar
-);
+export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(Navbar);

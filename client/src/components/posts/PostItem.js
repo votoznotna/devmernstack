@@ -22,9 +22,8 @@ class PostItem extends Component {
     const { auth } = this.props;
     if (likes.filter(like => like.user === auth.user.id).length > 0) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   render() {
@@ -93,17 +92,16 @@ PostItem.defaultProps = {
 };
 
 PostItem.propTypes = {
+  showActions: PropTypes.bool,
   deletePost: PropTypes.func.isRequired,
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired
+  post: PropTypes.instanceOf(Object).isRequired,
+  auth: PropTypes.instanceOf(Object).isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { deletePost, addLike, removeLike })(
-  PostItem
-);
+export default connect(mapStateToProps, { deletePost, addLike, removeLike })(PostItem);

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 
-import { Provider } from 'react-redux';
 import store from './store';
 
 import PrivateRoute from './components/common/PrivateRoute';
@@ -25,7 +25,7 @@ import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import NotFound from './components/not-found/NotFound';
-
+import transitionOfComponent from './components/common/TransitionGroup';
 import './App.css';
 
 // Check for token
@@ -33,7 +33,7 @@ if (localStorage.jwtToken) {
   // Set auth token header auth
   setAuthToken(localStorage.jwtToken);
   // Decode token and get user info and exp
-  const decoded = jwt_decode(localStorage.jwtToken);
+  const decoded = jwtDecode(localStorage.jwtToken);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
 
@@ -56,50 +56,50 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={transitionOfComponent(Landing)} />
             <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/profiles" component={Profiles} />
-              <Route exact path="/profile/:handle" component={Profile} />
+              <Route exact path="/register" component={transitionOfComponent(Register)} />
+              <Route exact path="/login" component={transitionOfComponent(Login)} />
+              <Route exact path="/profiles" component={transitionOfComponent(Profiles)} />
+              <Route exact path="/profile/:handle" component={transitionOfComponent(Profile)} />
               <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/dashboard" component={transitionOfComponent(Dashboard)} />
               </Switch>
               <Switch>
                 <PrivateRoute
                   exact
                   path="/create-profile"
-                  component={CreateProfile}
+                  component={transitionOfComponent(CreateProfile)}
                 />
               </Switch>
               <Switch>
                 <PrivateRoute
                   exact
                   path="/edit-profile"
-                  component={EditProfile}
+                  component={transitionOfComponent(EditProfile)}
                 />
               </Switch>
               <Switch>
                 <PrivateRoute
                   exact
                   path="/add-experience"
-                  component={AddExperience}
+                  component={transitionOfComponent(AddExperience)}
                 />
               </Switch>
               <Switch>
                 <PrivateRoute
                   exact
                   path="/add-education"
-                  component={AddEducation}
+                  component={transitionOfComponent(AddEducation)}
                 />
               </Switch>
               <Switch>
-                <PrivateRoute exact path="/feed" component={Posts} />
+                <PrivateRoute exact path="/feed" component={transitionOfComponent(Posts)} />
               </Switch>
               <Switch>
-                <PrivateRoute exact path="/post/:id" component={Post} />
+                <PrivateRoute exact path="/post/:id" component={transitionOfComponent(Post)} />
               </Switch>
-              <Route exact path="/not-found" component={NotFound} />
+              <Route exact path="/not-found" component={transitionOfComponent(NotFound)} />
             </div>
             <Footer />
           </div>

@@ -52,6 +52,7 @@ class Experience extends Component {
 }
 
 Experience.propTypes = {
+  experience: PropTypes.instanceOf(Array).isRequired,
   deleteExperience: PropTypes.func.isRequired
 };
 

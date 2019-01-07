@@ -51,7 +51,12 @@ class Education extends Component {
   }
 }
 
+Education.defaultProps = {
+  education: []
+};
+
 Education.propTypes = {
+  education: PropTypes.instanceOf(Array),
   deleteEducation: PropTypes.func.isRequired
 };
 

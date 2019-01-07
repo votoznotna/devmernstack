@@ -242,8 +242,9 @@ class CreateProfile extends Component {
 }
 
 CreateProfile.propTypes = {
-  profile: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  createProfile: PropTypes.func.isRequired,
+  history: PropTypes.instanceOf(Array).isRequired,
+  errors: PropTypes.instanceOf(Object).isRequired
 };
 
 const mapStateToProps = state => ({
@@ -251,6 +252,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { createProfile })(
-  withRouter(CreateProfile)
-);
+export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));
