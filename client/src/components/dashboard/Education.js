@@ -22,7 +22,7 @@ class Education extends Component {
             <Moment format="YYYY/MM/DD">{edu.to}</Moment>
           )}
         </td>
-        <td>
+        <td class="text-right">
           <button
             onClick={this.onDeleteClick.bind(this, edu._id)}
             className="btn btn-danger"
