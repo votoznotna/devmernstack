@@ -110,6 +110,12 @@ class EditProfile extends Component {
       instagram: this.state.instagram
     };
 
+    const errors = validateProfileInput(profileData);
+    if (!isEmpty(errors)) {
+      this.setState({ errors });
+      return;
+    }
+
     this.props.createProfile(profileData, this.props.history);
   }
 
