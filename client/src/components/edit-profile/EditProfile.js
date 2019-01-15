@@ -120,8 +120,7 @@ class EditProfile extends Component {
   }
 
   onChange(e) {
-    const { name } = e.target;
-    const { value } = e.target;
+    const { name, value } = e.target;
     this.setState({ [name]: value });
     this.setState({ errors: validateProfileInput({ [name]: value }) });
   }
