@@ -1,1 +1,2 @@
 Type rfc tab to get React component template - functional text component
+Before heroku push: heroku config:set NPM_CONFIG_PRODUCTION=false
