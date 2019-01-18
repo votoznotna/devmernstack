@@ -53,10 +53,8 @@ class AddEducation extends Component {
   }
 
   onCheck() {
-    this.setState({
-      disabled: !this.state.disabled,
-      current: !this.state.current
-    });
+    this.setState(prevState => ({ disabled: !prevState.disabled }));
+    this.setState(prevState => ({ current: !prevState.current }));
   }
 
   render() {
@@ -125,6 +123,8 @@ class AddEducation extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
+
+
                     Current Job
                   </label>
                 </div>

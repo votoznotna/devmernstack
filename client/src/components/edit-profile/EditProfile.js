@@ -200,6 +200,7 @@ class EditProfile extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link to="/dashboard" className="btn btn-light">
+
                 Go Back
               </Link>
               <h1 className="display-4 text-center">Edit Profile</h1>
@@ -282,6 +283,7 @@ class EditProfile extends Component {
                     }}
                     className="btn btn-light"
                   >
+
                     Add Social Network Links
                   </button>
                   <span className="text-muted">Optional</span>

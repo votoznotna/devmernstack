@@ -16,6 +16,7 @@
       "arrow-body-style": ["error", "as-needed"],
       "import/prefer-default-export": 0,
       "jsx-a11y/href-no-hash": 0,
+      "jsx-a11y/label-has-associated-control": 0,
       "jsx-a11y/label-has-for": [ "error", {
         "required": {
           "some": [ "nesting", "id"  ]
@@ -39,7 +40,11 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/jsx-no-bind": 0,
       "linebreak-style": 0,
+      "react/destructuring-assignment": ["enabled", "always"],
+      "implicit-arrow-linebreak": ["error", "beside"],
+      "react/button-has-type": 0,
       "react/no-unescaped-entities": 0,
-      "react/prefer-stateless-function": 0
+      "react/prefer-stateless-function": 0,
+      "react/jsx-one-expression-per-line": 0
     }
   }

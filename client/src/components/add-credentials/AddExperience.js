@@ -53,10 +53,8 @@ class AddExperience extends Component {
   }
 
   onCheck() {
-    this.setState({
-      disabled: !this.state.disabled,
-      current: !this.state.current
-    });
+    this.setState(prevState => ({ disabled: !prevState.disabled }));
+    this.setState(prevState => ({ current: !prevState.current }));
   }
 
   render() {
@@ -68,10 +66,14 @@ class AddExperience extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link to="/dashboard" className="btn btn-light">
+
+
                 Go Back
               </Link>
               <h1 className="display-4 text-center">Add Experience</h1>
               <p className="lead text-center">
+
+
                 Add any job or position that you have had in the past or current
               </p>
               <small className="d-block pb-3">* = required fields</small>
@@ -125,6 +127,8 @@ class AddExperience extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
+
+
                     Current Job
                   </label>
                 </div>

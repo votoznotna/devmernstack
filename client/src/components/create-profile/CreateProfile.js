@@ -40,6 +40,7 @@ class CreateProfile extends Component {
   }
 
   onSubmit(e) {
+    const { history } = this.props;
     e.preventDefault();
 
     const profileData = {
@@ -57,8 +58,7 @@ class CreateProfile extends Component {
       youtube: this.state.youtube,
       instagram: this.state.instagram
     };
-
-    this.props.createProfile(profileData, this.props.history);
+    createProfile(profileData, history);
   }
 
   onChange(e) {
@@ -141,6 +141,8 @@ class CreateProfile extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Create Your Profile</h1>
               <p className="lead text-center">
+
+
                 Let's get some information to make your profile stand out
               </p>
               <small className="d-block pb-3">* = required fields</small>
@@ -222,6 +224,7 @@ class CreateProfile extends Component {
                     }}
                     className="btn btn-light"
                   >
+
                     Add Social Network Links
                   </button>
                   <span className="text-muted">Optional</span>
@@ -242,7 +245,6 @@ class CreateProfile extends Component {
 }
 
 CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
   history: PropTypes.instanceOf(Object).isRequired,
   errors: PropTypes.instanceOf(Object).isRequired
 };
