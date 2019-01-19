@@ -4,14 +4,9 @@ import {
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE
 } from '../actions/types';
+import initialState from './initialState';
 
-const initialState = {
-  profile: null,
-  profiles: null,
-  loading: false
-};
-
-export default function (state = initialState, action) {
+export default function (state = initialState.profile, action) {
   switch (action.type) {
     case PROFILE_LOADING:
       return {

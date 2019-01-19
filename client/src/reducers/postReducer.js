@@ -5,14 +5,9 @@ import {
   DELETE_POST,
   POST_LOADING
 } from '../actions/types';
+import initialState from './initialState';
 
-const initialState = {
-  posts: [],
-  post: {},
-  loading: false
-};
-
-export default function (state = initialState, action) {
+export default function (state = initialState.post, action) {
   switch (action.type) {
     case POST_LOADING:
       return {
