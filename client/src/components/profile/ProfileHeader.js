@@ -40,7 +40,7 @@ at
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <i className="fas fa-globe fa-2x" />
+                    <i className="fa fa-globe fa-2x" />
                   </a>
                 )}
 
