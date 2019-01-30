@@ -19,13 +19,11 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/feed">
-
             Post Feed
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-
             Dashboard
           </Link>
         </li>
@@ -43,7 +41,6 @@ class Navbar extends Component {
               title="You must have a Gravatar connected to your email to display an image"
             />
             {' '}
-
             Logout
           </a>
         </li>
@@ -54,13 +51,11 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-
             Sign Up
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/login">
-
             Login
           </Link>
         </li>
@@ -87,7 +82,6 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
-
                   Developers
                 </Link>
               </li>
