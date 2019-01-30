@@ -6,6 +6,6 @@ export default () => (
     Copyright &copy;
     {new Date().getFullYear()}
     {' '}
-DevConnector
+    DevNetwork
   </footer>
 );
