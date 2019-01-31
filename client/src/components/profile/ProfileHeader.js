@@ -26,7 +26,7 @@ class ProfileHeader extends Component {
                 {' '}
                 {isEmpty(profile.company) ? null : (
                   <span>
-at
+                    at {' '}
                     {profile.company}
                   </span>
                 )}
