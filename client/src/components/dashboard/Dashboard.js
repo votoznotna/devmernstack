@@ -51,7 +51,7 @@ class Dashboard extends Component {
       dashboardContent = (
         <div>
           <p className="lead text-muted">
-Welcome
+            Welcome {' '}
             {user.name}
           </p>
           <p>You have not yet setup a profile, please add some info</p>
