@@ -1,6 +1,6 @@
 import isEmpty from '../validation/is-empty';
 import initialState from './initialState';
-import { SET_CURRENT_USER, PROGRESS } from '../actions/types';
+import { SET_CURRENT_USER, PROGRESS, GET_ERRORS } from '../actions/types';
 
 export default function (state = initialState.auth, action) {
   switch (action.type) {
@@ -14,6 +14,12 @@ export default function (state = initialState.auth, action) {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload,
+        loading: false
+      };
+    case GET_ERRORS:
+      return {
+        ...state,
+        isAuthenticated: false,
         loading: false
       };
     default:
