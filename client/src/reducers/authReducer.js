@@ -19,7 +19,6 @@ export default function (state = initialState.auth, action) {
     case GET_ERRORS:
       return {
         ...state,
-        isAuthenticated: false,
         loading: false
       };
     default:
